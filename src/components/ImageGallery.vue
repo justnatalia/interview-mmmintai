@@ -13,7 +13,7 @@ import type { GalleryItem } from '@/lib/gallery-item.d.ts'
 /**
  * Component props with a default empty items array
  */
- const props = withDefaults(defineProps<{ items: GalleryItem[] }>(), {
+const props = withDefaults(defineProps<{ items: GalleryItem[] }>(), {
   items: () => [],
 })
 
@@ -87,14 +87,14 @@ function resetRotation() {
 /**
  * Resets all image transformations to their default values.
  */
- function resetAll() {
+function resetAll() {
   resetZoom()
   resetRotation()
 }
 </script>
 
 <template>
-<div class="image-gallery">
+  <div class="image-gallery">
     <div class="gallery-controls" v-if="totalImages > 0">
       <div class="zoom-controls">
         <v-btn icon @click="zoomOut"><v-icon>mdi-magnify-minus</v-icon></v-btn>
@@ -125,7 +125,7 @@ function resetRotation() {
           class="gallery-image"
           :style="{
             transform: `scale(${zoomLevel}) rotate(${rotationDegree}deg)`,
-            transition: 'transform 0.3s ease'
+            transition: 'transform 0.3s ease',
           }"
         />
       </div>
@@ -156,7 +156,6 @@ function resetRotation() {
   padding: 20px;
 }
 
-
 .gallery-controls {
   display: flex;
   justify-content: space-between;
@@ -166,7 +165,9 @@ function resetRotation() {
   gap: 10px;
 }
 
-.zoom-controls, .rotate-controls, .navigation-controls {
+.zoom-controls,
+.rotate-controls,
+.navigation-controls {
   display: flex;
   align-items: center;
   gap: 5px;

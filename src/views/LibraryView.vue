@@ -12,9 +12,9 @@ import ImageGallery from '@/components/ImageGallery.vue'
  * Both sets are combined into a computed property for display
  */
 
- const galleryItems = ref<GalleryItem[]>([])
+const galleryItems = ref<GalleryItem[]>([])
 
- const items = ref<GalleryItem[]>([
+const items = ref<GalleryItem[]>([
   {
     src: 'https://www.schadensmeldung.digital/images/fuhrparkmanagerin.webp',
     thumbnail: 'https://www.schadensmeldung.digital/images/fuhrparkmanagerin.webp',
@@ -76,7 +76,7 @@ function handleFileDrop(files: FileList) {
 </script>
 
 <template>
-    <v-row>
+  <v-row>
     <v-col cols="12">
       <h1>Library</h1>
     </v-col>
@@ -85,10 +85,8 @@ function handleFileDrop(files: FileList) {
       <v-card>
         <v-card-title>Drop Field</v-card-title>
         <v-card-text>
-    <DropField
-      accept=".jpg, .jpeg, .png, .webp"
-      @drop="handleFileDrop" />
-    </v-card-text>
+          <DropField accept=".jpg, .jpeg, .png, .webp" @drop="handleFileDrop" />
+        </v-card-text>
       </v-card>
     </v-col>
 
@@ -96,8 +94,8 @@ function handleFileDrop(files: FileList) {
       <v-card>
         <v-card-title>Gallery</v-card-title>
         <v-card-text>
-    <ImageGallery :items="allItems" />
-     </v-card-text>
+          <ImageGallery :items="allItems" />
+        </v-card-text>
       </v-card>
     </v-col>
   </v-row>
